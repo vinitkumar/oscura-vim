@@ -4,6 +4,10 @@ A dark colorscheme for Vim based on a VSCode theme. Oscura provides a comfortabl
 
 Based on this great Theme [Oscura](https://marketplace.visualstudio.com/items?itemName=Fey.oscura) for VScode. Please go and add a star there https://github.com/narative/oscura
 
+## Screenshot
+
+![screenshot](./oscura-vim.png)
+
 ## Features
 
 - Dark theme optimized for long coding sessions
@@ -57,4 +61,4 @@ MIT License - see LICENSE file for details
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request. 
+Contributions are welcome! Please feel free to submit a Pull Request.
