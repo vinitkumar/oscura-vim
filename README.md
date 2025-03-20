@@ -37,10 +37,19 @@ Add this to your `.vimrc`:
 Plug 'vinitkumar/oscura-vim'
 ```
 
-#### Vundle
-Add this to your `.vimrc`:
-```vim
-Plugin 'vinitkumar/oscura-vim'
+#### Packer
+Add this to your Neovim config:
+```lua
+use 'vinitkumar/oscura-vim'
+```
+
+#### Lazy.nvim
+Add this to your Neovim config:
+```lua
+{
+  'vinitkumar/oscura-vim',
+  lazy = false, -- Load during startup
+}
 ```
 
 ## Usage
