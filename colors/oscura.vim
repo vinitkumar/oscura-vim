@@ -25,7 +25,7 @@ let s:error        = "#D84F68"
 let s:warning      = "#FF5C5C"
 let s:special      = "#9592A4"
 let s:visual       = "#333740"    " Changed from #EAEC8A21 (removed alpha)
-let s:cursor       = "#FFFFFF"
+let s:cursor       = "#FFCC00"
 let s:selection    = "#5A5B63"
 let s:linenum      = "#32333B"
 let s:linenum_act  = "#E6E6E6"
@@ -53,7 +53,7 @@ endfunction
 
 " Editor highlighting
 call s:h("Normal", s:fg, s:bg, "")
-call s:h("Cursor", s:bg, s:cursor, "")
+call s:h("Cursor", s:bg, s:cursor, "bold")
 call s:h("CursorLine", "", "#191919", "none")
 call s:h("LineNr", s:linenum, "", "")
 call s:h("CursorLineNr", s:linenum_act, "", "")
