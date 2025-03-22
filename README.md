@@ -6,7 +6,8 @@ Based on this great Theme [Oscura](https://marketplace.visualstudio.com/items?it
 
 ## Screenshot
 
-![screenshot](./oscura-vim.png)
+![screenshot](./nvim2.png)
+![screenshot](./nvim3.png)
 
 ## Features
 
