@@ -54,7 +54,8 @@ endfunction
 " Editor highlighting
 call s:h("Normal", s:fg, s:bg, "")
 call s:h("Cursor", s:bg, s:cursor, "bold")
-call s:h("CursorLine", "", "#191919", "none")
+" CursorLine set same as background so that it is non obtrusive.
+call s:h("CursorLine", "", s:bg, "none")
 call s:h("LineNr", s:linenum, "", "")
 call s:h("CursorLineNr", s:linenum_act, "", "")
 call s:h("VertSplit", s:linenum, s:bg, "")
