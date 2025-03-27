@@ -1,19 +1,29 @@
-# Oscura Vim Colorscheme
+# Oscura Vim Colorschemes
 
-A dark colorscheme for Vim based on a VSCode theme. Oscura provides a comfortable, eye-friendly dark theme that maintains good contrast and readability.
+A collection of dark colorschemes for Vim based on VSCode themes. Oscura provides comfortable, eye-friendly dark themes that maintain good contrast and readability.
 
 Based on this great Theme [Oscura](https://marketplace.visualstudio.com/items?itemName=Fey.oscura) for VScode. Please go and add a star there https://github.com/narative/oscura
 
-## Screenshot
+## Available Themes
 
+- **Oscura**: The original dark theme with a deep, rich background (#0B0B0F)
+- **Oscura Dusk**: A slightly lighter variant with enhanced contrast (#131419)
+
+## Screenshots
+
+### Oscura
 ![screenshot](./nvim2.png)
 ![screenshot](./nvim3.png)
 
+### Oscura Dusk
+[Add screenshot for Dusk variant]
+
 ## Features
 
-- Dark theme optimized for long coding sessions
+- Two dark themes optimized for long coding sessions
 - High contrast for better readability
-- Syntax highlighting for multiple programming languages
+- Comprehensive syntax highlighting for multiple programming languages
+- Enhanced TypeScript/JavaScript support
 - Support for common Vim UI elements (status line, line numbers, etc.)
 - Git diff highlighting
 - Search and visual mode highlighting
@@ -22,12 +32,13 @@ Based on this great Theme [Oscura](https://marketplace.visualstudio.com/items?it
 
 ### Manual Installation
 
-1. Download the `oscura.vim` file
-2. Place it in your `~/.vim/colors/` directory (create the directory if it doesn't exist)
+1. Download the colorscheme files
+2. Place them in your `~/.vim/colors/` directory (create the directory if it doesn't exist)
 
 ```bash
 mkdir -p ~/.vim/colors
 cp oscura.vim ~/.vim/colors/
+cp oscura-dusk.vim ~/.vim/colors/
 ```
 
 ### Using a Plugin Manager
@@ -55,15 +66,33 @@ Add this to your Neovim config:
 
 ## Usage
 
-Add this line to your `.vimrc`:
+Add one of these lines to your `.vimrc`:
 ```vim
+" For the original dark theme
 colorscheme oscura
+
+" For the dusk variant
+colorscheme oscura-dusk
 ```
 
 ## Requirements
 
 - Vim 7.4 or later
 - True color support (recommended)
+
+## Theme Comparison
+
+### Oscura (Original)
+- Deeper background (#0B0B0F)
+- Classic dark theme aesthetics
+- Optimal for low-light environments
+
+### Oscura Dusk
+- Slightly lighter background (#131419)
+- Enhanced contrast for better readability
+- Optimized for various lighting conditions
+- Updated error and warning colors
+- Enhanced TypeScript/JavaScript support
 
 ## License
 
