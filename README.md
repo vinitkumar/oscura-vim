@@ -13,10 +13,10 @@ Based on this great Theme [Oscura](https://marketplace.visualstudio.com/items?it
 
 ### Oscura
 ![screenshot](./nvim2.png)
-![screenshot](./nvim3.png)
 
 ### Oscura Dusk
-[Add screenshot for Dusk variant]
+![screenshot](./nvim3.png)
+
 
 ## Features
 
