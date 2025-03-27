@@ -1,0 +1,11 @@
+Execute (Diff Mode):
+  " Test diff mode colors
+  let diff_add = synIDattr(hlID('DiffAdd'), 'bg#')
+  Assert diff_add ==# '#4EBE96', 'Added lines should have correct background'
+
+  let diff_delete = synIDattr(hlID('DiffDelete'), 'bg#')
+  Assert diff_delete ==# '#FF5C5C', 'Deleted lines should have correct background'
+
+Execute (Search Highlighting):
+  let search_bg = synIDattr(hlID('Search'), 'bg#')
+  Assert search_bg ==# '#5C6974', 'Search highlight should have correct background' 

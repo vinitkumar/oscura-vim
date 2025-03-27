@@ -1,0 +1,16 @@
+name: Tests
+on: [push, pull_request]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Vim
+        run: sudo apt-get install vim
+      - name: Install Vader
+        run: |
+          git clone https://github.com/junegunn/vader.vim.git
+          echo "set rtp+=vader.vim" > ~/.vimrc
+      - name: Run tests
+        run: ./run-tests.sh 

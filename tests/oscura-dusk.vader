@@ -1,0 +1,65 @@
+" Test file for Oscura Dusk colorscheme
+" Install Vader: https://github.com/junegunn/vader.vim
+
+Before (Setup):
+  colorscheme oscura-dusk
+  syntax enable
+
+Execute (Basic Color Definitions):
+  let colors = {
+  \ 'bg': '#131419',
+  \ 'fg': '#E6E6E6',
+  \ 'comment': '#46474F',
+  \ 'keyword': '#9099A1',
+  \ 'function': '#E6E7A3',
+  \ 'string': '#F9B98C'
+  \ }
+  
+  " Test background color
+  let bg_color = synIDattr(hlID('Normal'), 'bg#')
+  Assert bg_color ==# colors.bg, 'Background color should be '.colors.bg.' but got '.bg_color
+
+  " Test foreground color
+  let fg_color = synIDattr(hlID('Normal'), 'fg#')
+  Assert fg_color ==# colors.fg, 'Foreground color should be '.colors.fg.' but got '.fg_color
+
+Execute (Syntax Highlighting):
+  " Test comment highlighting
+  let comment_color = synIDattr(hlID('Comment'), 'fg#')
+  Assert comment_color ==# colors.comment, 'Comment color should be '.colors.comment
+
+  " Test function highlighting
+  let func_color = synIDattr(hlID('Function'), 'fg#')
+  Assert func_color ==# colors.function, 'Function color should be '.colors.function
+
+Execute (TypeScript Support):
+  " Test TypeScript specific highlights
+  let ts_keyword = synIDattr(hlID('typescriptKeyword'), 'fg#')
+  Assert ts_keyword ==# colors.keyword, 'TypeScript keyword color should be '.colors.keyword
+
+  let ts_func = synIDattr(hlID('typescriptFuncName'), 'fg#')
+  Assert ts_func ==# colors.function, 'TypeScript function name color should be '.colors.function
+
+Execute (UI Elements):
+  " Test UI elements like status line, line numbers, etc.
+  let line_nr = synIDattr(hlID('LineNr'), 'fg#')
+  Assert line_nr ==# '#32333B', 'Line number color should be #32333B'
+
+  let cursor_line_bg = synIDattr(hlID('CursorLine'), 'bg#')
+  Assert cursor_line_bg ==# '#232323', 'Cursor line background should be #232323'
+
+Execute (Special Highlights):
+  " Test special syntax elements
+  let string_color = synIDattr(hlID('String'), 'fg#')
+  Assert string_color ==# colors.string, 'String color should be '.colors.string
+
+  " Test if italic style is applied to comments
+  let comment_style = synIDattr(hlID('Comment'), 'italic')
+  Assert comment_style == 1, 'Comments should be italic'
+
+Execute (Terminal Colors):
+  if has('nvim')
+    " Test terminal colors in Neovim
+    Assert g:terminal_color_0 ==# colors.bg, 'Terminal color 0 should match background'
+    Assert g:terminal_color_7 ==# colors.fg, 'Terminal color 7 should match foreground'
+  endif 
