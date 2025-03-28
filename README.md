@@ -174,6 +174,67 @@ The theme files can be located in:
 - `~/.config/ghostty/themes` (recommended)
 - You can also use absolute paths in your config file
 
+## Nano Editor Installation
+
+### Manual Installation
+1. Create the required directories:
+```bash
+mkdir -p ~/.nano/syntax
+```
+
+2. Copy the theme files:
+```bash
+cp nano/main-oscura.nanorc ~/.nanorc
+cp -r nano/syntax/* ~/.nano/syntax/
+```
+
+### Color Scheme
+The theme uses the following color mappings:
+- Keywords: yellow
+- Functions and Types: green
+- Comments: bright blue
+- Strings and Numbers: yellow
+- Decorators and Special: cyan
+- Background: black
+- Foreground: white
+
+### Note
+- Nano's color support is limited to basic terminal colors
+- The theme adapts the Oscura color scheme to work within nano's limitations
+- For best results, ensure your terminal supports basic colors
+- Some terminals may display colors differently
+
+### TypeScript Support
+The theme includes comprehensive syntax highlighting for TypeScript:
+
+- **Language Features**
+  - Type annotations and interfaces
+  - Generics and type parameters
+  - Decorators
+  - Modern TypeScript keywords
+  - JSX/TSX syntax
+
+- **Color Scheme**
+  - Keywords: yellow
+  - Types and Classes: green
+  - Type Annotations: cyan
+  - Decorators: magenta
+  - Strings: yellow
+  - Numbers: red
+  - Comments: bright blue
+  - Special Characters: magenta
+  - Function Calls: green
+
+- **File Types**
+  - `.ts` - TypeScript files
+  - `.tsx` - TypeScript React files
+
+### Usage
+TypeScript highlighting is automatically enabled for files with `.ts` and `.tsx` extensions.
+
+### Note
+For TSX files, ensure your nano version supports JSX syntax highlighting (nano 4.0 or later recommended).
+
 ## License
 
 MIT License - see LICENSE file for details

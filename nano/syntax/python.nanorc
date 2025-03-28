@@ -1,0 +1,20 @@
+syntax "python" "\.py$" "\.pyw$"
+
+# Keywords
+color yellow "\<(def|class|import|from|as|with|in|is|not|and|or|True|False|None|try|except|finally|raise|assert|lambda|yield|global|nonlocal)\>"
+color green "\<(__init__|__main__|__name__|__file__|__doc__|__dict__|__module__|__bases__|__class__)\>"
+
+# Comments
+color brightblue "#.*"
+color yellow start="'''[^']*" end="'''"
+color yellow start="\"\"\"[^\"]*" end="\"\"\""
+
+# Decorators
+color cyan "@[A-Za-z_][0-9A-Za-z_]*"
+
+# Strings and Numbers
+color yellow ""([^"]|\\")*"|'([^']|\\')*'"
+color yellow "\<([0-9]+)\>"
+
+# Function calls
+color green "\<[A-Za-z_][0-9A-Za-z_]+\s*\(" 

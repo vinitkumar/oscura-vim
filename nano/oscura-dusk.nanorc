@@ -1,0 +1,84 @@
+## Oscura Dusk theme for nano
+## Author: Vinit Kumar
+## License: MIT
+
+# Basic Colors
+set titlecolor #E6E6E6,#131419
+set statuscolor #E6E6E6,#131419
+set errorcolor #FF5C5C,#131419
+set selectedcolor #E6E6E6,#5A5B63
+set stripecolor #232323
+set numbercolor #46474F
+set keycolor #9099A1
+set functioncolor #E6E7A3
+
+# Common Syntax Colors
+set functioncolor #E6E7A3
+set numbercolor #F9B98C
+set stringcolor #F9B98C
+set commentcolor #46474F
+set specialcolor #9592A4
+set keywordcolor #9099A1
+set constantcolor #F9B98C
+
+# General Programming Syntax
+color #9099A1 "\<(if|else|for|while|do|return|break|continue|switch|case|default|try|catch|finally|throw|throws)\>"
+color #F9B98C ""([^"]|\\")*"|'([^']|\\')*'"
+color #46474F "(^|[[:space:]])//.*"
+color #46474F start="/\*" end="\*/"
+color #F9B98C "\<([0-9]+)\>"
+color #9592A4 "[.,;:{}()<>!=&|+\-/*%^]"
+color #E6E7A3 "\<[A-Za-z_][0-9A-Za-z_]+\s*\("
+
+# Python Specific
+color #9099A1 "\<(def|class|import|from|as|with|in|is|not|and|or|True|False|None|try|except|finally|raise|assert|lambda|yield|global|nonlocal)\>"
+color #E6E7A3 "\<(__init__|__main__|__name__|__file__|__doc__|__dict__|__module__|__bases__|__class__)\>"
+color #46474F "#.*"
+color #F9B98C start="'''[^']*" end="'''"
+color #F9B98C start="\"\"\"[^\"]*" end="\"\"\""
+color #9592A4 "@[A-Za-z_][0-9A-Za-z_]*"
+
+# Ruby Specific
+color #9099A1 "\<(begin|end|def|class|module|rescue|ensure|when|unless|until|while|for|break|next|redo|retry|in|do|yield|self|super|return|alias|undef|BEGIN|END|__FILE__|__LINE__|private|protected|public|require|include|extend|attr_reader|attr_writer|attr_accessor)\>"
+color #E6E7A3 "\<[A-Z][A-Za-z0-9_]*\>"
+color #46474F "#.*"
+color #9592A4 "@{1,2}[A-Za-z_][0-9A-Za-z_]*"
+color #9592A4 ":[A-Za-z_][0-9A-Za-z_]*"
+color #F9B98C start="=begin" end="=end"
+
+# JavaScript/TypeScript Common
+color #9099A1 "\<(const|let|var|function|class|extends|implements|constructor|super|this|static|public|private|protected|readonly|interface|type|enum|namespace|module|export|import|default|as|from|async|await|of|new|delete|instanceof|typeof|void)\>"
+color #E6E7A3 "\<(Array|Boolean|Date|Error|Function|Math|Number|Object|RegExp|String|Promise|Map|Set|Symbol|any|never|unknown|null|undefined)\>"
+color #9592A4 "\$[A-Za-z_][0-9A-Za-z_]*"
+color #F9B98C start="`" end="`"
+color #9592A4 "\${.*?}"
+
+# TypeScript Specific
+color #9099A1 "\<(declare|abstract|implements|type|interface|keyof|typeof|infer|is|as|satisfies)\>"
+color #E6E7A3 ":[[:space:]]*[A-Za-z_][0-9A-Za-z_<>]*"
+color #9592A4 "<[^>]*>"
+
+# Keywords
+color #9099A1 "\<(class|namespace|interface|struct|enum|union|typedef|extends|implements|instanceof|new|delete|throw|throws|try|catch|finally|public|private|protected|internal|static|final|const|abstract|override|virtual|sealed|readonly|partial|ref|out|params|volatile|unsafe|fixed|readonly|stackalloc|operator|event|delegate|explicit|implicit|get|set|add|remove|value|async|await|yield|from|where|select|group|into|orderby|join|let|in|on|equals|by|ascending|descending|return|break|continue|goto|if|else|switch|case|default|while|do|for|foreach|lock|using|checked|unchecked|is|as|sizeof|typeof|null|true|false|void|bool|byte|char|decimal|double|float|int|long|object|sbyte|short|string|uint|ulong|ushort|var)\>"
+
+# Types
+color #E6E7A3 "\<(bool|byte|char|decimal|double|float|int|long|object|sbyte|short|string|uint|ulong|ushort|void)\>"
+
+# Strings
+color #F9B98C ""([^"]|\\")*""
+color #F9B98C "'([^']|\\')*'"
+
+# Comments
+color #46474F "//.*"
+color #46474F start="/\*" end="\*/"
+
+# Special
+color #9592A4 "[.,;:{}()<>!=&|+\-/*%^]"
+color #9592A4 "\["
+color #9592A4 "\]"
+
+# Numbers
+color #F9B98C "\<([0-9]+)\>"
+
+# Function calls
+color #E6E7A3 "\<[A-Za-z_][0-9A-Za-z_]+\s*\(" 
