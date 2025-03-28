@@ -94,6 +94,58 @@ colorscheme oscura-dusk
 - Updated error and warning colors
 - Enhanced TypeScript/JavaScript support
 
+## Kitty Terminal Installation
+
+### Manual Installation
+1. Create a `kitty` directory in your terminal configuration directory:
+```bash
+mkdir -p ~/.config/kitty/themes
+```
+
+2. Copy the theme files:
+```bash
+cp kitty/oscura.conf ~/.config/kitty/themes/
+cp kitty/oscura-dusk.conf ~/.config/kitty/themes/
+```
+
+3. To use the theme, you have two options:
+
+   **Option 1**: Add to your `~/.config/kitty/kitty.conf`:
+   ```bash
+   # For Oscura theme
+   include themes/oscura.conf
+
+   # OR for Oscura Dusk theme
+   include themes/oscura-dusk.conf
+   ```
+
+   **Option 2**: Use Kitty's theme selector:
+   ```bash
+   # For Oscura theme
+   kitty +kitten themes Oscura
+
+   # OR for Oscura Dusk theme
+   kitty +kitten themes "Oscura Dusk"
+   ```
+
+### Using Kitty Theme Kitten
+
+1. List available themes:
+```bash
+kitty +kitten themes
+```
+
+2. Preview and apply the theme:
+```bash
+# For Oscura theme
+kitty +kitten themes --reload-in=all Oscura
+
+# For Oscura Dusk theme
+kitty +kitten themes --reload-in=all "Oscura Dusk"
+```
+
+The themes will be available in the Kitty Theme Kitten browser, where you can preview and apply them interactively.
+
 ## License
 
 MIT License - see LICENSE file for details
