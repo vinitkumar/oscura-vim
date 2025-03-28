@@ -104,7 +104,7 @@ mkdir -p ~/.config/kitty/themes
 
 2. Copy the theme files:
 ```bash
-cp kitty/oscura.conf ~/.config/kitty/themes/
+cp kitty/oscura ~/.config/kitty/themes/
 cp kitty/oscura-dusk.conf ~/.config/kitty/themes/
 ```
 
@@ -113,7 +113,7 @@ cp kitty/oscura-dusk.conf ~/.config/kitty/themes/
    **Option 1**: Add to your `~/.config/kitty/kitty.conf`:
    ```bash
    # For Oscura theme
-   include themes/oscura.conf
+   include themes/oscura
 
    # OR for Oscura Dusk theme
    include themes/oscura-dusk.conf
@@ -145,6 +145,34 @@ kitty +kitten themes --reload-in=all "Oscura Dusk"
 ```
 
 The themes will be available in the Kitty Theme Kitten browser, where you can preview and apply them interactively.
+
+## Ghostty Terminal Installation
+
+### Manual Installation
+1. Create the themes directory:
+```bash
+mkdir -p ~/.config/ghostty/themes
+```
+
+2. Copy the theme files:
+```bash
+cp ghostty/oscura ~/.config/ghostty/themes/
+cp ghostty/oscura-dusk ~/.config/ghostty/themes/
+```
+
+3. To use the theme, add one of these lines to your Ghostty config file:
+```bash
+# For Oscura theme
+theme = oscura
+
+# OR for Oscura Dusk theme
+theme = oscura-dusk
+```
+
+### Theme Files Location
+The theme files can be located in:
+- `~/.config/ghostty/themes` (recommended)
+- You can also use absolute paths in your config file
 
 ## License
 

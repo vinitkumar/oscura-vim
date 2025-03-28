@@ -1,0 +1,48 @@
+# Oscura theme for Ghostty
+# Author: Vinit Kumar
+# License: MIT
+
+# Basic colors
+background = #0B0B0F
+foreground = #E6E6E6
+
+# Cursor colors
+cursor-color = #FFCC00
+cursor-text = #0B0B0F
+
+# Selection colors
+selection-background = #5A5B63
+selection-foreground = #E6E6E6
+
+# Standard terminal colors (0-15)
+# Black
+palette = 0=#0B0B0F
+palette = 8=#46474F
+
+# Red
+palette = 1=#FF5C5C
+palette = 9=#FF5C5C
+
+# Green
+palette = 2=#4EBE96
+palette = 10=#4EBE96
+
+# Yellow
+palette = 3=#F9B98C
+palette = 11=#F9B98C
+
+# Blue
+palette = 4=#479FFA
+palette = 12=#479FFA
+
+# Magenta
+palette = 5=#9592A4
+palette = 13=#9592A4
+
+# Cyan
+palette = 6=#54C0A3
+palette = 14=#54C0A3
+
+# White
+palette = 7=#E6E6E6
+palette = 15=#FFFFFF 
