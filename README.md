@@ -104,7 +104,7 @@ mkdir -p ~/.config/kitty/themes
 
 2. Copy the theme files:
 ```bash
-cp kitty/oscura ~/.config/kitty/themes/
+cp kitty/oscura.conf ~/.config/kitty/themes/
 cp kitty/oscura-dusk.conf ~/.config/kitty/themes/
 ```
 
@@ -113,7 +113,7 @@ cp kitty/oscura-dusk.conf ~/.config/kitty/themes/
    **Option 1**: Add to your `~/.config/kitty/kitty.conf`:
    ```bash
    # For Oscura theme
-   include themes/oscura
+   include themes/oscura.conf
 
    # OR for Oscura Dusk theme
    include themes/oscura-dusk.conf
