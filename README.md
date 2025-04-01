@@ -1,4 +1,4 @@
-# Oscura Vim Colorschemes
+# Oscura Colorschemes
 
 A collection of dark colorschemes for Vim based on VSCode themes. Oscura provides comfortable, eye-friendly dark themes that maintain good contrast and readability.
 
