@@ -1,0 +1,16 @@
+" TypeScript specific tests
+Before (Setup TypeScript):
+  set filetype=typescript
+  colorscheme oscura-dusk
+
+Execute (TypeScript Syntax):
+  " Create a temporary TypeScript buffer
+  put =['interface Test {', '  prop: string;', '}']
+  
+  " Test interface highlighting
+  let interface_color = synIDattr(synID(1, 1, 1), 'fg#')
+  Assert interface_color ==# '#E6E7A3', 'Interface keyword should be light yellow'
+
+  " Test type annotation highlighting
+  let type_color = synIDattr(synID(2, 8, 1), 'fg#')
+  Assert type_color ==# '#E6E7A3', 'Type annotation should be light yellow' 
