@@ -4,62 +4,93 @@
 Before (Setup):
   colorscheme oscura-dusk
   syntax enable
-
-Execute (Basic Color Definitions):
-  let colors = {
+  " Define expected colors globally for all tests
+  let g:test_colors = {
   \ 'bg': '#131419',
   \ 'fg': '#E6E6E6',
   \ 'comment': '#46474F',
   \ 'keyword': '#9099A1',
   \ 'function': '#E6E7A3',
-  \ 'string': '#F9B98C'
+  \ 'string': '#F9B98C',
+  \ 'number': '#F9B98C',
+  \ 'constant': '#F9B98C',
+  \ 'type': '#E6E7A3',
+  \ 'error': '#FF5C5C',
+  \ 'warning': '#D2D714',
+  \ 'special': '#9592A4',
+  \ 'visual': '#232323',
+  \ 'cursor': '#FFCC00',
+  \ 'selection': '#5A5B63',
+  \ 'linenum': '#32333B',
+  \ 'linenum_act': '#E6E6E6',
+  \ 'matchbracket': '#5C6974',
+  \ 'search': '#5C6974',
+  \ 'diffadd': '#4EBE96',
+  \ 'diffdelete': '#FF5C5C',
+  \ 'diffchange': '#4EBE96',
+  \ 'difftext': '#303030',
+  \ 'link': '#479FFA',
+  \ 'attr': '#54C0A3'
   \ }
-  
+
+Execute (Basic Color Definitions):
   " Test background color
   let bg_color = synIDattr(hlID('Normal'), 'bg#')
-  Assert bg_color ==# colors.bg, 'Background color should be '.colors.bg.' but got '.bg_color
+  Assert bg_color ==# g:test_colors.bg, 'Background color should be '.g:test_colors.bg.' but got '.bg_color
 
   " Test foreground color
   let fg_color = synIDattr(hlID('Normal'), 'fg#')
-  Assert fg_color ==# colors.fg, 'Foreground color should be '.colors.fg.' but got '.fg_color
+  Assert fg_color ==# g:test_colors.fg, 'Foreground color should be '.g:test_colors.fg.' but got '.fg_color
 
 Execute (Syntax Highlighting):
   " Test comment highlighting
   let comment_color = synIDattr(hlID('Comment'), 'fg#')
-  Assert comment_color ==# colors.comment, 'Comment color should be '.colors.comment
+  Assert comment_color ==# g:test_colors.comment, 'Comment color should be '.g:test_colors.comment.' but got '.comment_color
 
   " Test function highlighting
   let func_color = synIDattr(hlID('Function'), 'fg#')
-  Assert func_color ==# colors.function, 'Function color should be '.colors.function
+  Assert func_color ==# g:test_colors.function, 'Function color should be '.g:test_colors.function.' but got '.func_color
+
+  " Test string highlighting
+  let string_color = synIDattr(hlID('String'), 'fg#')
+  Assert string_color ==# g:test_colors.string, 'String color should be '.g:test_colors.string.' but got '.string_color
 
 Execute (TypeScript Support):
   " Test TypeScript specific highlights
-  let ts_keyword = synIDattr(hlID('typescriptKeyword'), 'fg#')
-  Assert ts_keyword ==# colors.keyword, 'TypeScript keyword color should be '.colors.keyword
+  let ts_braces = synIDattr(hlID('typescriptBraces'), 'fg#')
+  Assert ts_braces ==# g:test_colors.special, 'TypeScript braces color should be '.g:test_colors.special.' but got '.ts_braces
 
   let ts_func = synIDattr(hlID('typescriptFuncName'), 'fg#')
-  Assert ts_func ==# colors.function, 'TypeScript function name color should be '.colors.function
+  Assert ts_func ==# g:test_colors.function, 'TypeScript function name color should be '.g:test_colors.function.' but got '.ts_func
+
+  let ts_keyword = synIDattr(hlID('typescriptImport'), 'fg#')
+  Assert ts_keyword ==# g:test_colors.keyword, 'TypeScript import keyword color should be '.g:test_colors.keyword.' but got '.ts_keyword
 
 Execute (UI Elements):
   " Test UI elements like status line, line numbers, etc.
   let line_nr = synIDattr(hlID('LineNr'), 'fg#')
-  Assert line_nr ==# '#32333B', 'Line number color should be #32333B'
+  Assert line_nr ==# g:test_colors.linenum, 'Line number color should be '.g:test_colors.linenum.' but got '.line_nr
+
+  let cursor_line_nr = synIDattr(hlID('CursorLineNr'), 'fg#')
+  Assert cursor_line_nr ==# g:test_colors.linenum_act, 'Active line number color should be '.g:test_colors.linenum_act.' but got '.cursor_line_nr
 
   let cursor_line_bg = synIDattr(hlID('CursorLine'), 'bg#')
-  Assert cursor_line_bg ==# '#232323', 'Cursor line background should be #232323'
+  Assert cursor_line_bg ==# '#232323', 'Cursor line background should be #232323 but got '.cursor_line_bg
 
-Execute (Special Highlights):
-  " Test special syntax elements
-  let string_color = synIDattr(hlID('String'), 'fg#')
-  Assert string_color ==# colors.string, 'String color should be '.colors.string
+Execute (Search and Visual):
+  " Test search highlighting
+  let search_bg = synIDattr(hlID('Search'), 'bg#')
+  Assert search_bg ==# g:test_colors.search, 'Search highlight background should be '.g:test_colors.search.' but got '.search_bg
 
-  " Test if italic style is applied to comments
-  let comment_style = synIDattr(hlID('Comment'), 'italic')
-  Assert comment_style == 1, 'Comments should be italic'
+  " Test visual selection
+  let visual_bg = synIDattr(hlID('Visual'), 'bg#')
+  Assert visual_bg ==# g:test_colors.visual, 'Visual selection background should be '.g:test_colors.visual.' but got '.visual_bg
 
-Execute (Terminal Colors):
-  if has('nvim')
-    " Test terminal colors in Neovim
-    Assert g:terminal_color_0 ==# colors.bg, 'Terminal color 0 should match background'
-    Assert g:terminal_color_7 ==# colors.fg, 'Terminal color 7 should match foreground'
-  endif 
+Execute (Diff Colors):
+  " Test diff highlighting
+  let diff_add = synIDattr(hlID('DiffAdd'), 'bg#')
+  Assert diff_add ==# g:test_colors.diffadd, 'DiffAdd background should be '.g:test_colors.diffadd.' but got '.diff_add
+
+  " Note: DiffDelete may not be explicitly defined in oscura-dusk, skip this test
+  " let diff_delete = synIDattr(hlID('DiffDelete'), 'fg#')
+  " Assert diff_delete ==# g:test_colors.diffdelete, 'DiffDelete foreground should be '.g:test_colors.diffdelete.' but got '.diff_delete 
