@@ -1,0 +1,33 @@
+" TypeScript specific tests
+Before (Setup TypeScript):
+  set filetype=typescript
+  colorscheme oscura-dusk
+  syntax enable
+
+Execute (TypeScript Basic Syntax):
+  " Test TypeScript keyword highlighting
+  let ts_import = synIDattr(hlID('typescriptImport'), 'fg#')
+  Assert ts_import ==# '#9099A1', 'TypeScript import keyword should be gray'
+
+  let ts_export = synIDattr(hlID('typescriptExport'), 'fg#')
+  Assert ts_export ==# '#9099A1', 'TypeScript export keyword should be gray'
+
+  " Test TypeScript function highlighting
+  let ts_func = synIDattr(hlID('typescriptFuncName'), 'fg#')
+  Assert ts_func ==# '#E6E7A3', 'TypeScript function names should be light yellow'
+
+Execute (TypeScript Special Elements):
+  " Test TypeScript braces and parens
+  let ts_braces = synIDattr(hlID('typescriptBraces'), 'fg#')
+  Assert ts_braces ==# '#9592A4', 'TypeScript braces should be purple-gray'
+
+  let ts_parens = synIDattr(hlID('typescriptParens'), 'fg#')
+  Assert ts_parens ==# '#9592A4', 'TypeScript parens should be purple-gray'
+
+Execute (TypeScript Types):
+  " Test interface and class names
+  let ts_class = synIDattr(hlID('typescriptClassName'), 'fg#')
+  Assert ts_class ==# '#E6E7A3', 'TypeScript class names should be light yellow'
+
+  let ts_interface = synIDattr(hlID('typescriptInterfaceName'), 'fg#')
+  Assert ts_interface ==# '#E6E7A3', 'TypeScript interface names should be light yellow' 

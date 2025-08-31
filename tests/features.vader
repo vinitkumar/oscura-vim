@@ -1,0 +1,26 @@
+Before (Setup):
+  colorscheme oscura-dusk
+  syntax enable
+
+Execute (Diff Mode):
+  " Test diff mode colors
+  let diff_add = synIDattr(hlID('DiffAdd'), 'bg#')
+  Assert diff_add ==# '#4EBE96', 'Added lines should have correct background'
+
+  let diff_delete = synIDattr(hlID('DiffDelete'), 'fg#')
+  Assert diff_delete ==# '#FF5C5C', 'Deleted lines should have correct foreground'
+
+Execute (Search Highlighting):
+  let search_bg = synIDattr(hlID('Search'), 'bg#')
+  Assert search_bg ==# '#5C6974', 'Search highlight should have correct background'
+
+Execute (Visual Selection):
+  let visual_bg = synIDattr(hlID('Visual'), 'bg#')
+  Assert visual_bg ==# '#232323', 'Visual selection should have correct background'
+
+Execute (Line Numbers):
+  let line_nr = synIDattr(hlID('LineNr'), 'fg#')
+  Assert line_nr ==# '#32333B', 'Line numbers should have correct foreground'
+
+  let cursor_line_nr = synIDattr(hlID('CursorLineNr'), 'fg#')
+  Assert cursor_line_nr ==# '#E6E6E6', 'Active line number should have correct foreground' 
