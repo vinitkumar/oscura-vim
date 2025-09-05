@@ -1,0 +1,41 @@
+syntax "typescript" "\.ts$" "\.tsx$"
+
+# TypeScript Keywords
+color yellow "\<(const|let|var|function|class|extends|implements|constructor|super|this|static|public|private|protected|readonly|interface|type|enum|namespace|module|export|import|default|as|from|async|await|of|new|delete|instanceof|typeof|void|declare|abstract|keyof|infer|is|satisfies)\>"
+
+# Types and Built-ins
+color green "\<(string|number|boolean|any|never|unknown|null|undefined|object|Array|Promise|Map|Set|Symbol|Date|RegExp|Error|BigInt)\>"
+color green "\<[A-Z][A-Za-z0-9_]*\>"
+
+# Type Annotations and Generics
+color cyan ":[[:space:]]*[A-Za-z_][0-9A-Za-z_]*"
+color cyan "<[^>]*>"
+color cyan "\<[A-Z][A-Za-z0-9_]*<.*>"
+
+# Decorators
+color magenta "@[A-Za-z_][0-9A-Za-z_]*"
+
+# Strings and Template Literals
+color yellow ""([^"]|\\")*"|'([^']|\\')*'"
+color yellow start="`" end="`"
+color cyan "\$\{[^}]*\}"
+
+# Numbers
+color red "\<[0-9]+\>"
+
+# Comments
+color brightblue "//.*"
+color brightblue start="/\*" end="\*/"
+
+# Special Characters
+color magenta "[.,;:]"
+color magenta "[<>()]"
+color magenta "[!&|=+\-*/%^]"
+
+# Function Calls
+color green "\<[A-Za-z_][0-9A-Za-z_]+\s*\("
+
+# JSX/TSX Specific
+color cyan "</?[A-Za-z_][A-Za-z0-9_]*"
+color cyan ">"
+color yellow "\<(true|false)\>" 

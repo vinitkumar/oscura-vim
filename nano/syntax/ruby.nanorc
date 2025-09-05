@@ -1,0 +1,15 @@
+syntax "ruby" "\.rb$" "Gemfile" "Rakefile"
+
+# Keywords
+color yellow "\<(begin|end|def|class|module|rescue|ensure|when|unless|until|while|for|break|next|redo|retry|in|do|yield|self|super|return|alias|undef|BEGIN|END|__FILE__|__LINE__|private|protected|public|require|include|extend|attr_reader|attr_writer|attr_accessor)\>"
+
+# Constants and Symbols
+color green "\<[A-Z][A-Za-z0-9_]*\>"
+color cyan ":[A-Za-z_][0-9A-Za-z_]*"
+
+# Instance/Class Variables
+color cyan "@{1,2}[A-Za-z_][0-9A-Za-z_]*"
+
+# Comments
+color brightblue "#.*"
+color yellow start="=begin" end="=end" 

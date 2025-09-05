@@ -195,85 +195,85 @@ execute "hi jsonNull guifg=".s:constant
 " TreeSitter support (for Neovim)
 if has("nvim")
   " Identifiers
-  execute "hi! link @variable guifg=".s:fg
-  execute "hi! link @variable.builtin guifg=".s:special
-  execute "hi! link @variable.parameter guifg=".s:special
-  execute "hi! link @variable.member guifg=".s:fg
-  execute "hi! link @constant guifg=".s:constant
-  execute "hi! link @constant.builtin guifg=".s:special
-  execute "hi! link @constant.macro guifg=".s:keyword
-  execute "hi! link @module guifg=".s:function
-  execute "hi! link @label guifg=".s:keyword
-  execute "hi! link @symbol guifg=".s:special
+  hi! link @variable Identifier
+  hi! link @variable.builtin Special
+  hi! link @variable.parameter Special
+  hi! link @variable.member Identifier
+  hi! link @constant Constant
+  hi! link @constant.builtin Special
+  hi! link @constant.macro Define
+  hi! link @module Type
+  hi! link @label Label
+  hi! link @symbol Special
 
   " Functions
-  execute "hi! link @function guifg=".s:function
-  execute "hi! link @function.builtin guifg=".s:special
-  execute "hi! link @function.macro guifg=".s:keyword
-  execute "hi! link @method guifg=".s:function
-  execute "hi! link @constructor guifg=".s:function
-  execute "hi! link @parameter guifg=".s:special
+  hi! link @function Function
+  hi! link @function.builtin Special
+  hi! link @function.macro Macro
+  hi! link @method Function
+  hi! link @constructor Function
+  hi! link @parameter Special
 
   " Keywords
-  execute "hi! link @keyword guifg=".s:keyword
-  execute "hi! link @keyword.function guifg=".s:keyword
-  execute "hi! link @keyword.operator guifg=".s:keyword
-  execute "hi! link @keyword.return guifg=".s:keyword
-  execute "hi! link @conditional guifg=".s:keyword
-  execute "hi! link @repeat guifg=".s:keyword
-  execute "hi! link @debug guifg=".s:warning
-  execute "hi! link @exception guifg=".s:keyword
-  execute "hi! link @include guifg=".s:keyword
-  execute "hi! link @define guifg=".s:keyword
+  hi! link @keyword Keyword
+  hi! link @keyword.function Keyword
+  hi! link @keyword.operator Operator
+  hi! link @keyword.return Keyword
+  hi! link @conditional Conditional
+  hi! link @repeat Repeat
+  hi! link @debug Debug
+  hi! link @exception Exception
+  hi! link @include Include
+  hi! link @define Define
 
   " Types
-  execute "hi! link @type guifg=".s:type
-  execute "hi! link @type.builtin guifg=".s:type
-  execute "hi! link @type.qualifier guifg=".s:keyword
-  execute "hi! link @type.definition guifg=".s:type
-  execute "hi! link @storageclass guifg=".s:keyword
-  execute "hi! link @namespace guifg=".s:fg
-  execute "hi! link @attribute guifg=".s:special
-  execute "hi! link @property guifg=".s:fg
-  execute "hi! link @field guifg=".s:fg
+  hi! link @type Type
+  hi! link @type.builtin Type
+  hi! link @type.qualifier StorageClass
+  hi! link @type.definition Typedef
+  hi! link @storageclass StorageClass
+  hi! link @namespace Identifier
+  hi! link @attribute Special
+  hi! link @property Identifier
+  hi! link @field Identifier
 
   " Literals
-  execute "hi! link @string guifg=".s:string
-  execute "hi! link @string.regex guifg=".s:string
-  execute "hi! link @string.escape guifg=".s:special
-  execute "hi! link @string.special guifg=".s:special
-  execute "hi! link @character guifg=".s:string
-  execute "hi! link @character.special guifg=".s:special
-  execute "hi! link @boolean guifg=".s:constant
-  execute "hi! link @number guifg=".s:number
-  execute "hi! link @float guifg=".s:number
+  hi! link @string String
+  hi! link @string.regex String
+  hi! link @string.escape SpecialChar
+  hi! link @string.special SpecialChar
+  hi! link @character Character
+  hi! link @character.special SpecialChar
+  hi! link @boolean Boolean
+  hi! link @number Number
+  hi! link @float Float
 
   " Markup
-  execute "hi! link @text.strong guifg=".s:fg
-  execute "hi! link @text.emphasis guifg=".s:fg
-  execute "hi! link @text.underline guifg=".s:fg
-  execute "hi! link @text.strike guifg=".s:comment
-  execute "hi! link @text.title guifg=".s:function
-  execute "hi! link @text.literal guifg=".s:string
-  execute "hi! link @text.uri guifg=".s:fg." gui=underline"
-  execute "hi! link @text.reference guifg=".s:fg
-  execute "hi! link @tag guifg=".s:special
-  execute "hi! link @tag.attribute guifg=".s:keyword
-  execute "hi! link @tag.delimiter guifg=".s:special
+  hi! link @text.strong Bold
+  hi! link @text.emphasis Italic
+  hi! link @text.underline Underlined
+  hi! link @text.strike Comment
+  hi! link @text.title Title
+  hi! link @text.literal String
+  hi! link @text.uri Underlined
+  hi! link @text.reference Identifier
+  hi! link @tag Tag
+  hi! link @tag.attribute Label
+  hi! link @tag.delimiter Special
 
   " Comments
-  execute "hi! link @comment guifg=".s:comment
-  execute "hi! link @comment.documentation guifg=".s:comment
+  hi! link @comment Comment
+  hi! link @comment.documentation SpecialComment
 
   " Punctuation
-  execute "hi! link @punctuation.delimiter guifg=".s:special
-  execute "hi! link @punctuation.bracket guifg=".s:special
-  execute "hi! link @punctuation.special guifg=".s:special
+  hi! link @punctuation.delimiter Delimiter
+  hi! link @punctuation.bracket Delimiter
+  hi! link @punctuation.special Delimiter
 
   " Misc
-  execute "hi! link @error guifg=".s:error
-  execute "hi! link @danger guifg=".s:error
-  execute "hi! link @todo guifg=".s:function." gui=italic"
+  hi! link @error Error
+  hi! link @danger Error
+  hi! link @todo Todo
 endif
 
 " TypeScript/JavaScript Specific

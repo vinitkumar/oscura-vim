@@ -1,0 +1,16 @@
+## Oscura theme for nano
+## Author: Vinit Kumar
+## License: MIT
+
+# Basic Colors
+set titlecolor white,black
+set statuscolor white,black
+set errorcolor red,black
+set selectedcolor white,blue
+set stripecolor black
+set numbercolor cyan
+set keycolor yellow
+set functioncolor green
+
+# Include the syntax files
+include "~/.nano/syntax/*.nanorc" 

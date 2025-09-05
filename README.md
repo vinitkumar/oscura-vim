@@ -167,6 +167,9 @@ For better terminal integration, ensure your terminal supports true colors:
 set termguicolors
 set background=dark  " or 'light' for light themes
 colorscheme oscura
+
+" For the dusk variant
+colorscheme oscura-dusk
 ```
 
 ## 🔧 Requirements

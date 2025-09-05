@@ -1,0 +1,15 @@
+syntax "javascript" "\.js$"
+
+# Keywords
+color yellow "\<(const|let|var|function|class|extends|implements|constructor|super|this|static|public|private|protected|readonly|export|import|default|as|from|async|await|of|new|delete|instanceof|typeof|void)\>"
+
+# Built-in Types
+color green "\<(Array|Boolean|Date|Error|Function|Math|Number|Object|RegExp|String|Promise|Map|Set|Symbol|null|undefined)\>"
+
+# Template Strings
+color yellow start="`" end="`"
+color cyan "\${.*?}"
+
+# Comments
+color brightblue "(^|[[:space:]])//.*"
+color brightblue start="/\*" end="\*/" 
