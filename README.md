@@ -1,244 +1,228 @@
-# Oscura Colorschemes
+# Oscura Vim Colorscheme Collection
 
-A collection of dark colorschemes for Vim based on VSCode themes. Oscura provides comfortable, eye-friendly dark themes that maintain good contrast and readability.
+A comprehensive collection of colorschemes for Vim/Neovim based on the popular VSCode Oscura theme. This collection provides comfortable, eye-friendly themes that maintain excellent contrast and readability for both dark and light environments.
 
-Based on this great Theme [Oscura](https://marketplace.visualstudio.com/items?itemName=Fey.oscura) for VScode. Please go and add a star there https://github.com/narative/oscura
+> **Based on:** [Oscura](https://marketplace.visualstudio.com/items?itemName=Fey.oscura) for VSCode by Fey. Please show your support by starring the [original repository](https://github.com/narative/oscura)!
 
-## Available Themes
+## 🌟 Available Themes
 
-- **Oscura**: The original dark theme with a deep, rich background (#0B0B0F)
-- **Oscura Dusk**: A slightly lighter variant with enhanced contrast (#131419)
+### 🌙 Dark Themes
 
-## Screenshots
+#### `oscura` - Classic Dark
+The original dark theme, perfect for low-light environments and extended coding sessions. Features a balanced color palette with excellent contrast.
 
-### Oscura
-![screenshot](./nvim2.png)
+#### `oscura-dusk` - Dark Dusk
+A warmer dark variant with dusk-inspired colors. Ideal for those who prefer warmer tones while maintaining the dark aesthetic.
 
-### Oscura Dusk
-![screenshot](./nvim3.png)
+### ☀️ Light Themes
 
+#### `oscura-light` - Classic Light
+A clean, modern light theme designed for bright environments. Provides excellent readability with a professional appearance.
 
-## Features
+#### `oscura-dusk-light` - Light Dusk
+A warm light variant with dusk-inspired colors. Perfect for users who want the benefits of a light theme with warmer, more comfortable tones.
 
-- Two dark themes optimized for long coding sessions
-- High contrast for better readability
-- Comprehensive syntax highlighting for multiple programming languages
-- Enhanced TypeScript/JavaScript support
-- Support for common Vim UI elements (status line, line numbers, etc.)
-- Git diff highlighting
-- Search and visual mode highlighting
+## 📸 Screenshots
 
-## Installation
+### Dark Themes
+| oscura (Dark) | oscura-dusk (Dark Dusk) |
+|---------------|-------------------------|
+| ![oscura dark](./nvim2.png) | ![oscura dark](./nvim3.png) |
 
-### Manual Installation
+### Light Themes
+| oscura-light | oscura-dusk-light |
+|--------------|-------------------|
+| ![oscura light](./oscura-light.png) | ![oscura dusk light](./oscura-dusk-light.png) |
 
-1. Download the colorscheme files
-2. Place them in your `~/.vim/colors/` directory (create the directory if it doesn't exist)
+## ✨ Features
 
-```bash
-mkdir -p ~/.vim/colors
-cp oscura.vim ~/.vim/colors/
-cp oscura-dusk.vim ~/.vim/colors/
-```
+- **4 Complete Themes**: 2 dark + 2 light variants
+- **Optimized for Productivity**: Designed for long coding sessions
+- **High Contrast**: Excellent readability in all lighting conditions
+- **Comprehensive Syntax Highlighting**: Support for 50+ programming languages
+- **Modern UI Support**: Status lines, line numbers, popup menus, and more
+- **Git Integration**: Enhanced diff highlighting and merge conflict markers
+- **Search & Visual Mode**: Clear highlighting for search results and selections
+- **Plugin Compatibility**: Works with popular plugins like LSP, Treesitter, and more
 
-### Using a Plugin Manager
+## 🚀 Installation
+
+### Method 1: Plugin Manager (Recommended)
 
 #### Vim-Plug
-Add this to your `.vimrc`:
+Add to your `.vimrc`:
 ```vim
 Plug 'vinitkumar/oscura-vim'
 ```
 
-#### Packer
-Add this to your Neovim config:
+#### Packer.nvim
+Add to your Neovim config:
 ```lua
 use 'vinitkumar/oscura-vim'
 ```
 
 #### Lazy.nvim
-Add this to your Neovim config:
+Add to your Neovim config:
 ```lua
 {
   'vinitkumar/oscura-vim',
-  lazy = false, -- Load during startup
+  lazy = false, -- Load during startup for immediate availability
 }
 ```
 
-## Usage
-
-Add one of these lines to your `.vimrc`:
+#### Vundle
+Add to your `.vimrc`:
 ```vim
-" For the original dark theme
+Plugin 'vinitkumar/oscura-vim'
+```
+
+### Method 2: Manual Installation
+
+1. **Clone or download** this repository
+2. **Copy the theme files** to your colors directory:
+
+```bash
+# For Vim
+mkdir -p ~/.vim/colors
+cp colors/oscura*.vim ~/.vim/colors/
+
+# For Neovim
+mkdir -p ~/.config/nvim/colors
+cp colors/oscura*.vim ~/.config/nvim/colors/
+```
+
+### Method 3: Download Individual Themes
+
+If you only want specific themes, download them individually:
+
+```bash
+# Download specific themes
+curl -o ~/.vim/colors/oscura.vim https://raw.githubusercontent.com/vinitkumar/oscura-vim/main/colors/oscura.vim
+curl -o ~/.vim/colors/oscura-light.vim https://raw.githubusercontent.com/vinitkumar/oscura-vim/main/colors/oscura-light.vim
+# ... and so on for other themes
+```
+
+## 🎨 Usage
+
+### Basic Usage
+
+Add one of these lines to your `.vimrc` or Neovim config:
+
+```vim
+" Dark themes
+colorscheme oscura          " Classic dark
+colorscheme oscura-dusk     " Dark dusk variant
+
+" Light themes  
+colorscheme oscura-light    " Classic light
+colorscheme oscura-dusk-light " Light dusk variant
+```
+
+### Advanced Configuration
+
+#### Auto-switching Based on Time
+```vim
+function! SetOscuraTheme()
+  let hour = str2nr(strftime('%H'))
+  if hour >= 6 && hour < 18
+    " Daytime - use light theme
+    colorscheme oscura-light
+  else
+    " Nighttime - use dark theme
+    colorscheme oscura
+  endif
+endfunction
+
+" Call on startup
+call SetOscuraTheme()
+
+" Optional: Auto-switch every hour
+autocmd CursorHold * call SetOscuraTheme()
+```
+
+#### Neovim Lua Configuration
+```lua
+-- In your init.lua or colorscheme config
+local function set_oscura_theme()
+  local hour = tonumber(os.date('%H'))
+  if hour >= 6 and hour < 18 then
+    vim.cmd('colorscheme oscura-light')
+  else
+    vim.cmd('colorscheme oscura')
+  end
+end
+
+-- Set theme on startup
+set_oscura_theme()
+
+-- Optional: Auto-switch every hour
+vim.timer.start(3600000, set_oscura_theme, {repeat = true})
+```
+
+#### Terminal Integration
+For better terminal integration, ensure your terminal supports true colors:
+
+```vim
+" Add to your .vimrc
+set termguicolors
+set background=dark  " or 'light' for light themes
 colorscheme oscura
 
 " For the dusk variant
 colorscheme oscura-dusk
 ```
 
-## Requirements
+## 🔧 Requirements
 
-- Vim 7.4 or later
-- True color support (recommended)
+- **Vim**: 7.4 or later
+- **Neovim**: 0.5 or later
+- **Terminal**: True color support (recommended)
+- **GUI**: Any Vim GUI (GVim, MacVim, etc.)
 
-## Theme Comparison
-
-### Oscura (Original)
-- Deeper background (#0B0B0F)
-- Classic dark theme aesthetics
-- Optimal for low-light environments
-
-### Oscura Dusk
-- Slightly lighter background (#131419)
-- Enhanced contrast for better readability
-- Optimized for various lighting conditions
-- Updated error and warning colors
-- Enhanced TypeScript/JavaScript support
-
-## Kitty Terminal Installation
-
-### Manual Installation
-1. Create a `kitty` directory in your terminal configuration directory:
+### Checking True Color Support
 ```bash
-mkdir -p ~/.config/kitty/themes
+# Test if your terminal supports true colors
+curl -s https://raw.githubusercontent.com/termstandard/colors/master/256colors2.pl | perl
 ```
 
-2. Copy the theme files:
+## 🎯 Plugin Compatibility
+
+These themes work well with popular plugins:
+
+- **LSP**: Language Server Protocol highlighting
+- **Treesitter**: Advanced syntax highlighting
+- **Git**: Fugitive, Gitsigns, etc.
+- **Status Lines**: Lightline, Airline, Lualine
+- **File Explorers**: NERDTree, Nvim-tree
+- **Fuzzy Finders**: FZF, Telescope
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Report Issues**: Found a bug or have a suggestion? Open an issue!
+2. **Submit Pull Requests**: Improvements, new features, or bug fixes
+3. **Share Screenshots**: Show off your setup with different themes
+4. **Improve Documentation**: Help make the README even better
+
+### Development Setup
 ```bash
-cp kitty/oscura.conf ~/.config/kitty/themes/
-cp kitty/oscura-dusk.conf ~/.config/kitty/themes/
+git clone https://github.com/vinitkumar/oscura-vim.git
+cd oscura-vim
+# Make your changes
+# Test with: vim -u NONE -c 'colorscheme oscura'
 ```
 
-3. To use the theme, you have two options:
+## 📄 License
 
-   **Option 1**: Add to your `~/.config/kitty/kitty.conf`:
-   ```bash
-   # For Oscura theme
-   include themes/oscura.conf
+MIT License - see [LICENSE](LICENSE) file for details.
 
-   # OR for Oscura Dusk theme
-   include themes/oscura-dusk.conf
-   ```
+## 🙏 Acknowledgments
 
-   **Option 2**: Use Kitty's theme selector:
-   ```bash
-   # For Oscura theme
-   kitty +kitten themes Oscura
+- **Original Theme**: [Oscura](https://github.com/narative/oscura) by Fey
+- **VSCode Extension**: [Oscura](https://marketplace.visualstudio.com/items?itemName=Fey.oscura)
+- **Community**: All contributors and users who provide feedback
 
-   # OR for Oscura Dusk theme
-   kitty +kitten themes "Oscura Dusk"
-   ```
+---
 
-### Using Kitty Theme Kitten
-
-1. List available themes:
-```bash
-kitty +kitten themes
-```
-
-2. Preview and apply the theme:
-```bash
-# For Oscura theme
-kitty +kitten themes --reload-in=all Oscura
-
-# For Oscura Dusk theme
-kitty +kitten themes --reload-in=all "Oscura Dusk"
-```
-
-The themes will be available in the Kitty Theme Kitten browser, where you can preview and apply them interactively.
-
-## Ghostty Terminal Installation
-
-### Manual Installation
-1. Create the themes directory:
-```bash
-mkdir -p ~/.config/ghostty/themes
-```
-
-2. Copy the theme files:
-```bash
-cp ghostty/oscura ~/.config/ghostty/themes/
-cp ghostty/oscura-dusk ~/.config/ghostty/themes/
-```
-
-3. To use the theme, add one of these lines to your Ghostty config file:
-```bash
-# For Oscura theme
-theme = oscura
-
-# OR for Oscura Dusk theme
-theme = oscura-dusk
-```
-
-### Theme Files Location
-The theme files can be located in:
-- `~/.config/ghostty/themes` (recommended)
-- You can also use absolute paths in your config file
-
-## Nano Editor Installation
-
-### Manual Installation
-1. Create the required directories:
-```bash
-mkdir -p ~/.nano/syntax
-```
-
-2. Copy the theme files:
-```bash
-cp nano/main-oscura.nanorc ~/.nanorc
-cp -r nano/syntax/* ~/.nano/syntax/
-```
-
-### Color Scheme
-The theme uses the following color mappings:
-- Keywords: yellow
-- Functions and Types: green
-- Comments: bright blue
-- Strings and Numbers: yellow
-- Decorators and Special: cyan
-- Background: black
-- Foreground: white
-
-### Note
-- Nano's color support is limited to basic terminal colors
-- The theme adapts the Oscura color scheme to work within nano's limitations
-- For best results, ensure your terminal supports basic colors
-- Some terminals may display colors differently
-
-### TypeScript Support
-The theme includes comprehensive syntax highlighting for TypeScript:
-
-- **Language Features**
-  - Type annotations and interfaces
-  - Generics and type parameters
-  - Decorators
-  - Modern TypeScript keywords
-  - JSX/TSX syntax
-
-- **Color Scheme**
-  - Keywords: yellow
-  - Types and Classes: green
-  - Type Annotations: cyan
-  - Decorators: magenta
-  - Strings: yellow
-  - Numbers: red
-  - Comments: bright blue
-  - Special Characters: magenta
-  - Function Calls: green
-
-- **File Types**
-  - `.ts` - TypeScript files
-  - `.tsx` - TypeScript React files
-
-### Usage
-TypeScript highlighting is automatically enabled for files with `.ts` and `.tsx` extensions.
-
-### Note
-For TSX files, ensure your nano version supports JSX syntax highlighting (nano 4.0 or later recommended).
-
-## License
-
-MIT License - see LICENSE file for details
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+**⭐ If you like this colorscheme collection, please give it a star!**
