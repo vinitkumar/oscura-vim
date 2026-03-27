@@ -14,8 +14,8 @@ let g:colors_name = "oscura"
 " Define colors
 let s:bg           = "#0B0B0F"
 let s:fg           = "#E6E6E6"
-let s:comment      = "#46474F"
-let s:keyword      = "#9099A1"
+let s:comment      = "#6B7280"
+let s:keyword      = "#A7B0B8"
 let s:function     = "#E6E7A3"
 let s:string       = "#F9B98C"
 let s:number       = "#F9B98C"
@@ -23,18 +23,18 @@ let s:constant     = "#F9B98C"
 let s:type         = "#E6E7A3"
 let s:error        = "#FF5C5C"
 let s:warning      = "#D2D714"
-let s:special      = "#9592A4"
-let s:visual       = "#232323"
+let s:special      = "#B0A9BE"
+let s:visual       = "#31343C"
 let s:cursor       = "#FFCC00"
-let s:selection    = "#5A5B63"
-let s:linenum      = "#32333B"
+let s:selection    = "#77808B"
+let s:linenum      = "#575E68"
 let s:linenum_act  = "#E6E6E6"
-let s:matchbracket = "#5C6974"
-let s:search       = "#5C6974"
-let s:diffadd      = "#4EBE96"
-let s:diffdelete   = "#FF5C5C"
-let s:diffchange   = "#4EBE96"
-let s:difftext     = "#303030"
+let s:matchbracket = "#3F4954"
+let s:search       = "#8A6A2A"
+let s:diffadd      = "#18392F"
+let s:diffdelete   = "#3A1F24"
+let s:diffchange   = "#1C2E33"
+let s:difftext     = "#27424A"
 let s:link         = "#479FFA"
 let s:attr         = "#54C0A3"
 
@@ -57,12 +57,12 @@ endfunction
 call s:Hi("Normal", s:fg, s:bg, "")
 call s:Hi("Cursor", s:bg, s:cursor, "bold")
 " CursorLine set same as background so that it is non obtrusive.
-call s:Hi("CursorLine", "", s:bg, "none")
+call s:Hi("CursorLine", "", "#151821", "none")
 call s:Hi("LineNr", s:linenum, "", "")
 call s:Hi("CursorLineNr", s:linenum_act, "", "")
 call s:Hi("VertSplit", s:linenum, s:bg, "")
-call s:Hi("StatusLine", s:fg, "#232323", "none")
-call s:Hi("StatusLineNC", s:comment, "#191919", "none")
+call s:Hi("StatusLine", s:fg, "#1A1D25", "none")
+call s:Hi("StatusLineNC", s:comment, "#151821", "none")
 call s:Hi("Pmenu", s:fg, "#2C2C31", "")
 call s:Hi("PmenuSel", s:bg, s:function, "")
 call s:Hi("PmenuSbar", "", "#2C2C31", "")
@@ -70,8 +70,8 @@ call s:Hi("PmenuThumb", "", s:selection, "")
 call s:Hi("TabLine", s:comment, s:bg, "none")
 call s:Hi("TabLineFill", s:comment, s:bg, "none")
 call s:Hi("TabLineSel", s:fg, s:bg, "none")
-call s:Hi("Search", s:bg, s:search, "")
-call s:Hi("IncSearch", s:bg, s:search, "")
+call s:Hi("Search", s:bg, s:search, "bold")
+call s:Hi("IncSearch", s:bg, s:search, "bold")
 call s:Hi("MatchParen", "", s:matchbracket, "")
 call s:Hi("Visual", "", s:visual, "")
 call s:Hi("NonText", s:comment, "", "")
@@ -83,19 +83,19 @@ call s:Hi("WarningMsg", s:warning, "", "")
 call s:Hi("SpecialKey", s:special, "", "")
 call s:Hi("Title", s:function, "", "bold")
 call s:Hi("SignColumn", "", s:bg, "")
-call s:Hi("DiffAdd", "", s:diffadd, "")
-call s:Hi("DiffDelete", s:diffdelete, s:diffdelete, "")
-call s:Hi("DiffChange", "", s:diffchange, "")
-call s:Hi("DiffText", "", s:difftext, "")
-call s:Hi("Folded", s:comment, "#191919", "")
+call s:Hi("DiffAdd", s:fg, s:diffadd, "")
+call s:Hi("DiffDelete", s:error, s:diffdelete, "")
+call s:Hi("DiffChange", s:fg, s:diffchange, "")
+call s:Hi("DiffText", s:fg, s:difftext, "")
+call s:Hi("Folded", s:comment, "#151821", "")
 call s:Hi("FoldColumn", s:comment, s:bg, "")
 call s:Hi("Directory", s:function, "", "")
 call s:Hi("SpellBad", s:error, "", "undercurl")
 call s:Hi("SpellCap", s:warning, "", "undercurl")
 call s:Hi("SpellRare", s:warning, "", "undercurl")
 call s:Hi("SpellLocal", s:warning, "", "undercurl")
-call s:Hi("ColorColumn", "", "#232323", "")
-call s:Hi("QuickFixLine", "", "#232323", "none")
+call s:Hi("ColorColumn", "", "#151821", "")
+call s:Hi("QuickFixLine", "", "#151821", "none")
 call s:Hi("Conceal", s:comment, s:bg, "")
 
 " Syntax highlighting groups

@@ -12,7 +12,7 @@ A comprehensive collection of colorschemes for Vim/Neovim based on the popular V
 The original dark theme, perfect for low-light environments and extended coding sessions. Features a balanced color palette with excellent contrast.
 
 #### `oscura-dusk` - Dark Dusk
-A warmer dark variant with dusk-inspired colors. Ideal for those who prefer warmer tones while maintaining the dark aesthetic.
+A warmer dark variant with dusk-inspired colors. Ideal for those who prefer warmer tones while maintaining the dark aesthetic, now with stronger comment, line-number, and selection legibility.
 
 ### ☀️ Light Themes
 
@@ -27,7 +27,7 @@ A warm light variant with dusk-inspired colors. Perfect for users who want the b
 ### Dark Themes
 | oscura (Dark) | oscura-dusk (Dark Dusk) |
 |---------------|-------------------------|
-| ![oscura dark](./nvim2.png) | ![oscura dark](./nvim3.png) |
+| ![oscura dark](./nvim2.png) | ![oscura dusk with improved legibility](./nvim-oscura-dusk-legibility.png) |
 
 ### Light Themes
 | oscura-light | oscura-dusk-light |

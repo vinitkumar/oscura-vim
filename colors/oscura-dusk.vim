@@ -14,8 +14,8 @@ let g:colors_name = "oscura-dusk"
 " Define colors
 let s:bg           = "#131419"    " Changed from #0B0B0F
 let s:fg           = "#E6E6E6"
-let s:comment      = "#46474F"
-let s:keyword      = "#9099A1"
+let s:comment      = "#6B7280"
+let s:keyword      = "#A7B0B8"
 let s:function     = "#E6E7A3"
 let s:string       = "#F9B98C"
 let s:number       = "#F9B98C"
@@ -23,18 +23,18 @@ let s:constant     = "#F9B98C"
 let s:type         = "#E6E7A3"
 let s:error        = "#FF5C5C"    " Changed from #D84F68
 let s:warning      = "#D2D714"    " Changed from #FF5C5C
-let s:special      = "#9592A4"
-let s:visual       = "#232323"    " Changed from #EAEC8A21
+let s:special      = "#B0A9BE"
+let s:visual       = "#31343C"    " Stronger visual selection
 let s:cursor       = "#FFCC00"
-let s:selection    = "#5A5B63"
-let s:linenum      = "#32333B"
+let s:selection    = "#77808B"
+let s:linenum      = "#575E68"
 let s:linenum_act  = "#E6E6E6"
-let s:matchbracket = "#5C6974"    " Changed from #EAEC8A54
-let s:search       = "#5C6974"    " Changed from #EAEC8A54
-let s:diffadd      = "#4EBE96"    " Changed from #E6E6E615
-let s:diffdelete   = "#FF5C5C"    " Changed from #D84F6815
-let s:diffchange   = "#4EBE96"    " Changed from #E6E6E615
-let s:difftext     = "#303030"    " Changed from #E6E6E630
+let s:matchbracket = "#3F4954"    " Distinct from search
+let s:search       = "#8A6A2A"    " Stronger search highlight
+let s:diffadd      = "#18392F"    " Readable dark green
+let s:diffdelete   = "#3A1F24"    " Readable dark red
+let s:diffchange   = "#1C2E33"    " Readable dark blue
+let s:difftext     = "#27424A"    " Emphasized changed text
 let s:link         = "#479FFA"
 let s:attr         = "#54C0A3"
 
@@ -44,12 +44,12 @@ execute "command! -nargs=+ Hi hi <args>"
 " Editor highlighting
 execute "hi Normal guifg=".s:fg." guibg=".s:bg
 execute "hi Cursor guifg=".s:bg." guibg=".s:cursor." gui=bold"
-execute "hi CursorLine guibg=#232323 gui=none"
+execute "hi CursorLine guibg=#151821 gui=none"
 execute "hi LineNr guifg=".s:linenum
 execute "hi CursorLineNr guifg=".s:linenum_act
 execute "hi VertSplit guifg=".s:linenum." guibg=".s:bg
-execute "hi StatusLine guifg=".s:fg." guibg=#232323 gui=none"
-execute "hi StatusLineNC guifg=".s:comment." guibg=#191919 gui=none"
+execute "hi StatusLine guifg=".s:fg." guibg=#1A1D25 gui=none"
+execute "hi StatusLineNC guifg=".s:comment." guibg=#151821 gui=none"
 execute "hi Pmenu guifg=".s:fg." guibg=#2C2C31"
 execute "hi PmenuSel guifg=".s:bg." guibg=".s:function
 execute "hi PmenuSbar guibg=#2C2C31"
@@ -57,10 +57,58 @@ execute "hi PmenuThumb guibg=".s:selection
 execute "hi TabLine guifg=".s:comment." guibg=".s:bg." gui=none"
 execute "hi TabLineFill guifg=".s:comment." guibg=".s:bg." gui=none"
 execute "hi TabLineSel guifg=".s:fg." guibg=".s:bg." gui=none"
-execute "hi Search guifg=".s:bg." guibg=".s:search
-execute "hi IncSearch guifg=".s:bg." guibg=".s:search
+execute "hi Search guifg=".s:bg." guibg=".s:search." gui=bold"
+execute "hi IncSearch guifg=".s:bg." guibg=".s:search." gui=bold"
 execute "hi MatchParen guibg=".s:matchbracket
 execute "hi Visual guibg=".s:visual
+execute "hi Identifier guifg=".s:fg
+execute "hi Statement guifg=".s:keyword
+execute "hi Conditional guifg=".s:keyword
+execute "hi Repeat guifg=".s:keyword
+execute "hi Label guifg=".s:keyword
+execute "hi Operator guifg=".s:keyword
+execute "hi Keyword guifg=".s:keyword
+execute "hi Exception guifg=".s:keyword
+execute "hi PreProc guifg=".s:keyword
+execute "hi Include guifg=".s:keyword
+execute "hi Define guifg=".s:keyword
+execute "hi Macro guifg=".s:keyword
+execute "hi PreCondit guifg=".s:keyword
+execute "hi Type guifg=".s:type
+execute "hi StorageClass guifg=".s:keyword
+execute "hi Structure guifg=".s:type
+execute "hi Typedef guifg=".s:type
+execute "hi Special guifg=".s:special
+execute "hi SpecialChar guifg=".s:special
+execute "hi Tag guifg=".s:attr
+execute "hi Delimiter guifg=".s:special
+execute "hi SpecialComment guifg=".s:comment
+execute "hi Debug guifg=".s:warning
+execute "hi WildMenu guifg=".s:fg." guibg=".s:bg
+execute "hi NormalFloat guifg=".s:fg." guibg=#1A1D25"
+execute "hi DiffAdd guifg=".s:fg." guibg=".s:diffadd
+execute "hi DiffDelete guifg=".s:error." guibg=".s:diffdelete
+execute "hi DiffChange guifg=".s:fg." guibg=".s:diffchange
+execute "hi DiffText guifg=".s:fg." guibg=".s:difftext
+execute "hi Folded guifg=".s:comment." guibg=#151821"
+execute "hi FoldColumn guifg=".s:comment." guibg=".s:bg
+execute "hi ColorColumn guibg=#151821"
+execute "hi QuickFixLine guibg=#151821 gui=none"
+execute "hi NonText guifg=".s:comment
+execute "hi Todo guifg=".s:function." gui=italic"
+execute "hi Underlined guifg=".s:link." gui=underline"
+execute "hi Error guifg=".s:error
+execute "hi ErrorMsg guifg=".s:error
+execute "hi WarningMsg guifg=".s:warning
+execute "hi SpecialKey guifg=".s:special
+execute "hi Title guifg=".s:function." gui=bold"
+execute "hi SignColumn guibg=".s:bg
+execute "hi Directory guifg=".s:function
+execute "hi SpellBad guifg=".s:error." gui=undercurl"
+execute "hi SpellCap guifg=".s:warning." gui=undercurl"
+execute "hi SpellRare guifg=".s:warning." gui=undercurl"
+execute "hi SpellLocal guifg=".s:warning." gui=undercurl"
+execute "hi Conceal guifg=".s:comment." guibg=".s:bg
 
 " Syntax highlighting
 execute "hi Comment guifg=".s:comment
