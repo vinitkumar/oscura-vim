@@ -7,10 +7,10 @@ Before (Setup TypeScript):
 Execute (TypeScript Basic Syntax):
   " Test TypeScript keyword highlighting
   let ts_import = synIDattr(hlID('typescriptImport'), 'fg#')
-  Assert ts_import ==# '#9099A1', 'TypeScript import keyword should be gray'
+  Assert ts_import ==# '#A7B0B8', 'TypeScript import keyword should be muted blue-gray'
 
   let ts_export = synIDattr(hlID('typescriptExport'), 'fg#')
-  Assert ts_export ==# '#9099A1', 'TypeScript export keyword should be gray'
+  Assert ts_export ==# '#A7B0B8', 'TypeScript export keyword should be muted blue-gray'
 
   " Test TypeScript function highlighting
   let ts_func = synIDattr(hlID('typescriptFuncName'), 'fg#')
@@ -19,10 +19,10 @@ Execute (TypeScript Basic Syntax):
 Execute (TypeScript Special Elements):
   " Test TypeScript braces and parens
   let ts_braces = synIDattr(hlID('typescriptBraces'), 'fg#')
-  Assert ts_braces ==# '#9592A4', 'TypeScript braces should be purple-gray'
+  Assert ts_braces ==# '#B0A9BE', 'TypeScript braces should be lavender-gray'
 
   let ts_parens = synIDattr(hlID('typescriptParens'), 'fg#')
-  Assert ts_parens ==# '#9592A4', 'TypeScript parens should be purple-gray'
+  Assert ts_parens ==# '#B0A9BE', 'TypeScript parens should be lavender-gray'
 
 Execute (TypeScript Types):
   " Test interface and class names

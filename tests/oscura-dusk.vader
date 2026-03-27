@@ -8,8 +8,8 @@ Before (Setup):
   let g:test_colors = {
   \ 'bg': '#131419',
   \ 'fg': '#E6E6E6',
-  \ 'comment': '#46474F',
-  \ 'keyword': '#9099A1',
+  \ 'comment': '#6B7280',
+  \ 'keyword': '#A7B0B8',
   \ 'function': '#E6E7A3',
   \ 'string': '#F9B98C',
   \ 'number': '#F9B98C',
@@ -17,18 +17,18 @@ Before (Setup):
   \ 'type': '#E6E7A3',
   \ 'error': '#FF5C5C',
   \ 'warning': '#D2D714',
-  \ 'special': '#9592A4',
-  \ 'visual': '#232323',
+  \ 'special': '#B0A9BE',
+  \ 'visual': '#31343C',
   \ 'cursor': '#FFCC00',
-  \ 'selection': '#5A5B63',
-  \ 'linenum': '#32333B',
+  \ 'selection': '#77808B',
+  \ 'linenum': '#575E68',
   \ 'linenum_act': '#E6E6E6',
-  \ 'matchbracket': '#5C6974',
-  \ 'search': '#5C6974',
-  \ 'diffadd': '#4EBE96',
-  \ 'diffdelete': '#FF5C5C',
-  \ 'diffchange': '#4EBE96',
-  \ 'difftext': '#303030',
+  \ 'matchbracket': '#3F4954',
+  \ 'search': '#8A6A2A',
+  \ 'diffadd': '#18392F',
+  \ 'diffdelete': '#3A1F24',
+  \ 'diffchange': '#1C2E33',
+  \ 'difftext': '#27424A',
   \ 'link': '#479FFA',
   \ 'attr': '#54C0A3'
   \ }
@@ -75,7 +75,7 @@ Execute (UI Elements):
   Assert cursor_line_nr ==# g:test_colors.linenum_act, 'Active line number color should be '.g:test_colors.linenum_act.' but got '.cursor_line_nr
 
   let cursor_line_bg = synIDattr(hlID('CursorLine'), 'bg#')
-  Assert cursor_line_bg ==# '#232323', 'Cursor line background should be #232323 but got '.cursor_line_bg
+  Assert cursor_line_bg ==# '#151821', 'Cursor line background should be #151821 but got '.cursor_line_bg
 
 Execute (Search and Visual):
   " Test search highlighting
@@ -91,6 +91,5 @@ Execute (Diff Colors):
   let diff_add = synIDattr(hlID('DiffAdd'), 'bg#')
   Assert diff_add ==# g:test_colors.diffadd, 'DiffAdd background should be '.g:test_colors.diffadd.' but got '.diff_add
 
-  " Note: DiffDelete may not be explicitly defined in oscura-dusk, skip this test
-  " let diff_delete = synIDattr(hlID('DiffDelete'), 'fg#')
-  " Assert diff_delete ==# g:test_colors.diffdelete, 'DiffDelete foreground should be '.g:test_colors.diffdelete.' but got '.diff_delete 
+  let diff_delete = synIDattr(hlID('DiffDelete'), 'bg#')
+  Assert diff_delete ==# g:test_colors.diffdelete, 'DiffDelete background should be '.g:test_colors.diffdelete.' but got '.diff_delete
